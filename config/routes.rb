@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :expenses
   resources :plans
 
- #  authenticated :user do
-	# root "expenses#index", as: "authenticated_root"
- #  end
+  authenticated :user do
+	   root "expenses#index", as: "authenticated_root"
+  end
 
   root "welcome_page#index"
   
