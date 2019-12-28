@@ -1,0 +1,13 @@
+<%= simple_form_for @NewExp do |f|%>
+
+	<%= f.input :type,
+	  input_html: { class: "input-text"}%>
+
+	<%= f.input :details,
+	  input_html: { class: "input-text"}%>
+
+
+	<%= f.button :submit,
+	   input_html: { class: "input-text"}%>
+
+<%end%>

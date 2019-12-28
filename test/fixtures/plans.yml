@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  start_Date: 
+  End_Date: 
+  income: 1.5
+  fixed_Expenses: 1.5
+  target_savings: 1.5
+  old_savings: 1.5
+
+two:
+  user_id: 1
+  start_Date: 
+  End_Date: 
+  income: 1.5
+  fixed_Expenses: 1.5
+  target_savings: 1.5
+  old_savings: 1.5

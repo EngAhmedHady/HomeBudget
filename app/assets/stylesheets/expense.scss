@@ -1,0 +1,66 @@
+// Place all the styles related to the expense controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.HomePage { 
+  margin: 0;
+  position: absolute;
+  background: image-url("Background2.jpg");
+  width: 1024px;
+  height: 520px;
+  top: 50%;  left: 50%; 
+  ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50px;
+  -webkit-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  -moz-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+}
+
+.LogoStyle{
+  width: 145px;
+  height: 150px;
+  position: absolute;
+  top: -140px;  left: -650px; 
+}
+
+.linkStyle2{
+	font-family: Cursive;
+	width: 100px;
+	color: #fff;
+	text-decoration: none;
+	margin: 0px 10px;
+}
+
+.linkStyle2:hover{
+	color: #ffff66;
+}
+
+.UserLinks{
+	display: inline;
+	width: 300px;
+	position: absolute;
+  top: -103px;  left: 105px; 
+}
+
+h1{
+	position: absolute;
+  left: -620px; 
+  color: #ffff00;
+  font-size: 50px;
+  font-family: Cursive;
+}
+
+.ButtonStyle3{
+	position: absolute;
+  width: 1024px; height: 100px;
+	top: 300px; left: -635px;
+}
+
+p{
+  color: #fff;
+  font-family: Cursive;
+  font-size: 16px;
+}
