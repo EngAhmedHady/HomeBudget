@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'calculator/index'
+
   devise_for :users
   resources :expenses
   resources :plans

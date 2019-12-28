@@ -1,0 +1,108 @@
+body{
+	background-color: #004668
+}
+.HomePage { 
+  margin: 0;
+  position: absolute;
+  background: image-url("Background2.jpg");
+  width: 1024px;
+  height: 520px;
+  top: 50%;  left: 50%; 
+  ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50px;
+  -webkit-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  -moz-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  overflow:auto;
+}
+
+.main{
+    /*to make all itemes in the meddile*/
+    position: absolute;
+    top: 60%; left: 30%;
+    /*to transfer the origin of the calculator to the meddile*/
+    transform: translateX(-50%)translateY(-50%);
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+/* By the name of button class*/
+/*General Button styles*/
+.Button_Style_Calc{
+    width: 50px; height: 50px;
+    font-family: cursive;
+    border-radius: 10px;
+    font-size: 18px;
+	opacity:0.6;
+    margin: 1px;
+    cursor: pointer;
+    background-color:  black;
+    border: none;
+    color: white;
+}
+
+.Button_Style_Calc:hover{
+	opacity: 1;
+    cursor: pointer;
+    background: #33ccff;
+    color: #002633;
+}
+
+/*Equal Button style*/
+.Button_Style_Calc2{
+    width: 50px; height: 105px;
+    font-family: cursive;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 1px;
+    opacity:0.6;
+    cursor: pointer;
+    background-color:  black;
+    border: none;
+    color: white;
+}
+
+.Button_Style_Calc2:hover{
+	opacity: 1;
+    cursor: pointer;
+    background: #33ccff;
+    color: #002633;
+}
+      
+   
+.textview{
+    width: 224px;
+    height: 18px;
+    margin:0px;
+    font-size: 14px;
+    color: gray;
+    background-color: #f0f8ff;
+    padding:0;
+    border-style: none;
+}      
+      
+.OutPut{
+    width: 224px;
+    height: 50px;
+    font-size: 25px;
+    border-style: none;
+    background-color: #f0f8ff;
+    color: black;
+}
+      
+/*input window boarder*/
+/*
+.form{
+    width: 213;
+    height: 70;
+    margin:5;
+    border-style: solid;
+    border-bottom-color: gray;
+    border-width: 1;
+}      
+	*/
