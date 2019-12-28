@@ -40,9 +40,9 @@
 
 .UserLinks{
 	display: inline;
-	width: 300px;
+	width: 500px;
 	position: absolute;
-  top: -103px;  left: 105px; 
+  top: -103px;  left: 7px; 
 }
 
 h1{
@@ -59,8 +59,16 @@ h1{
 	top: 300px; left: -635px;
 }
 
-p{
+.Label{
   color: #fff;
   font-family: Cursive;
-  font-size: 16px;
+  font-size: 18px;
+  margin: 10px 70px;
+  display: inline-block;
+}
+
+.Labels{
+  position: absolute;
+  width: 1000px;
+  top: 220px; left: -560px;
 }

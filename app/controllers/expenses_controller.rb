@@ -4,6 +4,7 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
+    @Date = Date.today.day.to_s + " "+Date::MONTHNAMES[Date.today.month].to_s+", "+Date.today.year.to_s
     @expenses = Expense.all
   end
 
@@ -14,7 +15,7 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = Expense.new
+    @expense = current_user.expense.build
   end
 
   # GET /expenses/1/edit
@@ -28,8 +29,10 @@ class ExpensesController < ApplicationController
 
     respond_to do |format|
       if @expense.save
-        format.html { redirect_to @expense, notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
+        @Confirmation = "New Expenses Saved 👌"
+        render index
+        # format.html { redirect_to @expense, notice: 'New Expenses Saved 👌' }
+        # format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
