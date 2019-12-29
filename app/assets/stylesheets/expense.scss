@@ -40,23 +40,24 @@
 
 .UserLinks{
 	display: inline;
-	width: 500px;
+	width: 330px;
 	position: absolute;
-  top: -103px;  left: 7px; 
+  top: -101px; left: 5px; 
 }
 
 h1{
 	position: absolute;
+  top: -10px;
   left: -620px; 
-  color: #ffff00;
+  color: #fff;
   font-size: 50px;
   font-family: Cursive;
 }
 
 .ButtonStyle3{
 	position: absolute;
-  width: 1024px; height: 100px;
-	top: 300px; left: -635px;
+  width: 970px; height: 70px;
+	top: 290px; left: -635px;
 }
 
 .Label{
@@ -69,6 +70,70 @@ h1{
 
 .Labels{
   position: absolute;
-  width: 1000px;
+  width: 850px;
   top: 220px; left: -560px;
+}
+.statement{
+  position: absolute;
+  width: 850px;
+  top: 110px; left: -1110px;
+  opacity: 0.8;
+}
+.Decore{
+  position: relative;
+  margin: 10px 35px;
+  border-radius: 20px;
+  height: 75px;
+  width: 200px;
+  line-height: 100px;
+  display: inline-block;
+  background: #000;
+  filter: blur(5px);
+  box-shadow: 0px 0px 25px -5px rgba(0,0,0,0.85);
+  opacity: 0.6;
+}
+
+.LabelSt{
+  position: relative;
+  color: #ffff00;
+  font-family: Cursive;
+  font-size: 30px;
+  margin: 10px 35px;
+  border-radius: 20px;
+  height: 100px;
+  width: 200px;
+  line-height: 75px;
+  text-align: center;
+  display: inline-block;
+}
+
+.form-inputs-exp{
+  position: absolute;
+  width: 400px;
+  top: 30px;
+  left: -575px;
+  color: #fff;
+  font-family: Cursive;
+  font-size: 18px;
+}
+
+.input-Details{
+  resize: none;
+  width: 100%;
+  height: 100px;
+  margin: 0px 10px 10px 10px;
+  border: none;
+}
+
+.input-Date{
+  width: 100px;
+  height: 30px;
+  margin: 0px 0px 10px 10px;
+  border: none;
+}
+
+.DirectoryButtons-new{
+  width: 300px; height: 20px;
+  position: absolute;
+  top: 0px; left: 550px;
 }

@@ -1,0 +1,50 @@
+<body>
+    <div class= "HomePage">
+      <form>
+        <%=link_to image_tag("Logo.png",:class => "LogoStyle"), "expenses"%>
+        <div class = "UserLinks">
+          <ul>
+            <li style="display:inline-block;">
+              <%= link_to "Calculator", "/calculators/new", :class => "linkStyle2"%>
+            </li>
+            <li style="display:inline-block;">
+              <%= link_to "Settings", edit_user_registration_path, :class => "linkStyle2"%>
+            </li>
+            <li style="display:inline-block;">
+              <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "linkStyle2"%>
+            </li>
+          </ul>
+         </div>
+       </form>
+       <p id="notice"><%= notice %></p>
+
+<h1>History</h1>
+<div class="TableContainer">
+  <table class="CalcHistory">
+  <thead class="TabeleHeader">
+    <tr class="CalcHistory-tr">
+      <th class="CalcHistory-thT">Title</th>
+      <th class="CalcHistory-th">Formula</th>
+      <th colspan="2" class="CalcHistory-thl"></th>
+    </tr>
+  </thead>
+
+  <tbody class="TabeleBody">
+    <% @calculators.each do |calculator| %>
+      <tr class="CalcHistory-tr">
+        <td class="CalcHistory-tdT"><%= calculator.title %></td>
+        <td class="CalcHistory-td"><%= calculator.formula %></td>
+        <td class="CalcHistory-tdl"><%= link_to 'Load', calculator, :class => "linkStyle2" %></td>
+        <td class="CalcHistory-tdl"><%= link_to 'Remove', calculator, method: :delete, data: { confirm: 'Are you sure?' }, :class => "linkStyle2" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+   <div class="DirectoryButtons" >
+    <%= link_to '<button type="button" class="Button_Style">Home</button>'.html_safe, "/expenses" %>
+  </div>
+</div>
+</body>

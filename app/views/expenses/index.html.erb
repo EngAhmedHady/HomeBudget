@@ -1,11 +1,11 @@
  <body>
     <div class= "HomePage">
       <form>
-        <%=image_tag("Logo.png",:class => "LogoStyle")%>
+        <%=link_to image_tag("Logo.png",:class => "LogoStyle"), "expenses"%>
         <div class = "UserLinks">
           <ul>
             <li style="display:inline-block;">
-              <%= link_to "Calculator", calculator_index_path, :class => "linkStyle2"%>
+              <%= link_to "Calculator", "/calculators/new", :class => "linkStyle2"%>
             </li>
             <li style="display:inline-block;">
               <%= link_to "Settings", edit_user_registration_path, :class => "linkStyle2"%>
@@ -24,9 +24,20 @@
 
           <%= link_to '<button type="button" class="Button_Style">Statistics</button>'.html_safe, "users/sign_up" %>
         </div>
-        
-        <div class="Labels">
 
+        <div class="statement">
+           <h2 class="Decore"> </h2>
+           <h2 class="Decore"></h2>
+           <h2 class="Decore"></h2>
+        </div>
+
+        <div class="statement">
+           <h2 class="LabelSt"><%= @TotalEx.sum(:paid) %> $</h2>
+           <h2 class="LabelSt"><%= @TotalEx.sum(:paid) %> $</h2>
+           <h2 class="LabelSt"><%= @TotalEx.sum(:paid) %> $</h2>
+        </div>
+       
+        <div class="Labels">
           <p class="Label">Total Expenses</p>
           <p class="Label">Budget status</p>
           <p class="Label">Avg. daily expenses </p>
@@ -35,43 +46,3 @@
       </form>
     </div>
   </body>
-
-
-
-
-<!-- <p id="notice"><%= notice %></p>
-
-<h1>Expenses</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th>Paid</th>
-      <th>Type</th>
-      <th>Details</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @expenses.each do |expense| %>
-      <tr>
-        <td><%= expense.user_id %></td>
-        <td><%= expense.date %></td>
-        <td><%= expense.paid %></td>
-        <td><%= expense.type %></td>
-        <td><%= expense.details %></td>
-        <td><%= link_to 'Show', expense %></td>
-        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Expense', new_expense_path %>
- -->

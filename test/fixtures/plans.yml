@@ -2,18 +2,18 @@
 
 one:
   user_id: 1
-  start_Date: 
-  End_Date: 
+  start_date: 2019-12-29
+  end_date: 2019-12-29
   income: 1.5
-  fixed_Expenses: 1.5
-  target_savings: 1.5
+  fixed_ex: 1.5
+  target_sa: 1.5
   old_savings: 1.5
 
 two:
   user_id: 1
-  start_Date: 
-  End_Date: 
+  start_date: 2019-12-29
+  end_date: 2019-12-29
   income: 1.5
-  fixed_Expenses: 1.5
-  target_savings: 1.5
+  fixed_ex: 1.5
+  target_sa: 1.5
   old_savings: 1.5

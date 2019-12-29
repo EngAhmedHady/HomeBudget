@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
-  get 'calculator/index'
+  # get 'calculator/index'
 
   devise_for :users
   resources :expenses
   resources :plans
+  resources :calculators 
 
   authenticated :user do
 	   root "expenses#index", as: "authenticated_root"

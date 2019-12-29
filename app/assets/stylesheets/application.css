@@ -12,7 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ *= require datetime_picker_input
  */
+
+ 
+ 
 .alert{
 	color: #ff3300;
 	position: absolute;

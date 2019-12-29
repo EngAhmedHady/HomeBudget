@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @plan.user_id %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @plan.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @plan.end_date %>
+</p>
+
+<p>
+  <strong>Income:</strong>
+  <%= @plan.income %>
+</p>
+
+<p>
+  <strong>Fixed ex:</strong>
+  <%= @plan.fixed_ex %>
+</p>
+
+<p>
+  <strong>Target sa:</strong>
+  <%= @plan.target_sa %>
+</p>
+
+<p>
+  <strong>Old savings:</strong>
+  <%= @plan.old_savings %>
+</p>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

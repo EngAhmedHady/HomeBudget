@@ -1,0 +1,106 @@
+<html>
+   <head>
+    <script>
+        
+        function insert(num){
+         document.getElementById("textview").value += num;
+         // form is the Name of form of textbox & the name of textbox
+        }
+
+        function equal(){
+            var exp = document.getElementById("textview").value;
+            if(exp){
+            document.getElementById("OutPut").value = eval(document.getElementById("textview").value);
+            //method executes the string as code
+            }
+
+            else{
+            document.getElementById("OutPut").value = "Expression Error";
+            }
+        }
+      
+        function Clean(){
+            document.getElementById("OutPut").value = "";
+            document.getElementById("textview").value = "";
+        }
+          
+        function Erase(){
+        var exp = document.getElementById("textview").value;
+        /* Note: when the length redused by one we erase the last chracter*/
+        document.getElementById("textview").value = exp.substring(0,exp.length-1);
+        }
+
+    </script>
+   </head>
+    <body>
+    <div class= "HomePage">
+    <div class="Calculator">
+        <%=link_to image_tag("Logo.png",:class => "LogoStyle"), "/expenses"%>
+        <div class = "UserLinks_clc">
+              <%= link_to "Calculator", new_calculator_path, :class => "linkStyle2"%>
+              <%= link_to "Settings", edit_user_registration_path, :class => "linkStyle2"%>
+              <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "linkStyle2"%>
+        </div>
+    </div>
+       <div class="main">
+            <%= simple_form_for(@calculator) do |f| %>
+            <h2><%= f.error_notification %></h2>
+            <h2><%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %></h2>
+            <table>
+                <tr>
+                    <td>
+                        <%= f.input :formula, as: :string, label: false, input_html: {class: "textview", id: "textview"}%>
+                    </td>                       
+                </tr>
+                <tr>
+                    <td><input class = "OutPut" id = "OutPut" disabled></td>
+                </tr>
+            </table>
+            <table>
+                <tr><!--declare new row of elements -->
+                    <td><input class="Button_Style_Calc" type="button" value= "Del" onclick="Erase();"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "C"   onclick="Clean();"></td><!--Declare new column-->
+                    <td><input class="Button_Style_Calc" type="button" value= "/" onclick="insert('/');"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "x" onclick="insert('*');"></td>
+                </tr>
+                <tr><!--declare new row of elements -->
+                    <td><input class="Button_Style_Calc" type="button" value= "1" onclick="insert(1);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "2" onclick="insert(2);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "3" onclick="insert(3);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "-" onclick="insert('-');"></td>
+                </tr>
+                <tr><!--declare new row of elements -->
+                    <td><input class="Button_Style_Calc" type="button" value= "4" onclick="insert(4);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "5" onclick="insert(5);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "6" onclick="insert(6);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "+" onclick="insert('+');"></td>
+                </tr>
+                <tr><!--declare new row of elements -->
+                    <td><input class="Button_Style_Calc" type="button" value= "7" onclick="insert(7);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "8" onclick="insert(8);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "9" onclick="insert(9);"></td>
+                    <td rowspan="2"><input class="Button_Style_Calc2" type="button" value= "=" onclick="equal();"></td>
+                </tr>
+                <tr><!--declare new row of elements -->
+                    <td><input class="Button_Style_Calc" type="button" value= "." onclick="insert('.');"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "0" onclick="insert(0);"></td>
+                    <td><input class="Button_Style_Calc" type="button" value= "mod" onclick="insert('%');"></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="DirectoryButtons" >
+            <%- if !@calculator.persisted? %>
+                <%= link_to '<button type="button" class="Button_Style">Load Operation</button>'.html_safe, "/calculators" %>
+                <%= f.button :submit, "Save Operation" , :class => "Button_Style" %>
+                <%= f.input :title ,as: :string, label: false, input_html: {class: "title" ,  value:"New Operation"} %> 
+            <%- else %>
+                <%= link_to '<button type="button" class="Button_Style">History</button>'.html_safe, "/calculators" %>
+            <% end %>
+        <% end %>
+            <%= link_to '<button type="button" class="Button_Style">Home</button>'.html_safe, "/expenses" %>
+
+        </div>
+    </div>
+   </body>
+</html>

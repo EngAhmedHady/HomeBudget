@@ -1,0 +1,217 @@
+body{
+	background-color: #004668
+}
+.HomePage { 
+  margin: 0;
+  position: absolute;
+  background: image-url("Background2.jpg");
+  width: 1024px;
+  height: 520px;
+  top: 50%;  left: 50%; 
+  ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50px;
+  -webkit-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  -moz-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  overflow:auto;
+}
+
+.main{
+    /*to make all itemes in the meddile*/
+    position: absolute;
+    top: 125px; left: 150px;
+    /*to transfer the origin of the calculator to the meddile*/
+    transform: translateX(-50%)translateY(-50%);
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+/* By the name of button class*/
+/*General Button styles*/
+.Button_Style_Calc{
+    width: 50px; height: 50px;
+    font-family: cursive;
+    border-radius: 10px;
+    font-size: 18px;
+	  opacity:0.6;
+    margin: 1px;
+    cursor: pointer;
+    background-color:  black;
+    border: none;
+    color: white;
+}
+
+.Button_Style_Calc:hover{
+	opacity: 1;
+    cursor: pointer;
+    background: #33ccff;
+    color: #002633;
+}
+
+/*Equal Button style*/
+.Button_Style_Calc2{
+    width: 50px; height: 105px;
+    font-family: cursive;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 1px;
+    opacity:0.6;
+    cursor: pointer;
+    background-color:  black;
+    border: none;
+    color: white;
+}
+
+.Button_Style_Calc2:hover{
+	opacity: 1;
+    cursor: pointer;
+    background: #33ccff;
+    color: #002633;
+}
+
+.title{
+  position: relative;
+  left: 7px;
+  width: 300px;
+  height: 40px;
+  font-family: cursive;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 1px;
+  opacity: 0.2;
+  transition: opacity .8s ease-in-out;
+  border-style: none;
+  text-align: center;
+}
+
+.title:hover{
+  opacity: 1;
+}
+
+      
+   
+.textview{
+    width: 224.5px;
+    height: 18px;
+    margin:0px;
+    font-size: 14px;
+    color: gray;
+    background-color: #f0f8ff;
+    padding:0;
+    border-style: none;
+}      
+      
+.OutPut{
+    width: 224px;
+    height: 50px;
+    font-size: 25px;
+    border-style: none;
+    background-color: #f0f8ff;
+    color: black;
+}
+      
+
+.Calculator{
+	background-color: #000;
+	position: absolute;
+	width: 102px;
+	top: 130px;  left: 65%;
+}
+
+.UserLinks_clc{
+	display: inline;
+  width: 265px;
+  position: absolute;
+  top: -85px; left: 45px;
+}
+
+.DirectoryButtons{
+  width: 300px; height: 20px;
+  position: absolute;
+  top: 150px; left: 650px;
+}
+
+.CalcHistory{
+  width: 100%;
+  font-family: cursive;
+  border: none;
+  text-decoration: none;
+  border-collapse:collapse;
+}
+
+.TableContainer{
+  position: absolute;
+  top: 150px; left: 50px;
+  width: 600px;height: 300px;
+}
+
+.TabeleHeader, .TabeleBody{
+   display: block;
+}
+
+.TabeleHeader{
+  width: 600px;
+}
+
+.TabeleBody{
+  overflow: auto;
+   height: 300px;
+   width: 600px;
+}
+
+
+.CalcHistory-th, .CalcHistory-thl,
+.CalcHistory-thT{
+  background-color: #4CAF50;
+  color: white;
+}
+
+.CalcHistory-tr:nth-child(even) {
+  background-color: #00b8e6;
+}
+
+.CalcHistory-tr:nth-child(odd) {
+  color: #fff;
+  background-color: #003d4d;
+}
+
+.CalcHistory-th, .CalcHistory-td, 
+.CalcHistory-tdl, .CalcHistory-tdT,
+.CalcHistory-thl,.CalcHistory-thT{
+  border: none;
+  text-align: center;
+  padding: 6px;
+}
+
+.CalcHistory-tdl{
+  width: 20px;
+}
+
+.CalcHistory-td{
+  width: 290px;
+}
+
+.CalcHistory-tdT{
+  width: 120px;
+}
+.CalcHistory-tr:hover {
+  color: #000;
+  background-color: #ff8000;
+}
+
+.CalcHistory-thl{
+  width: 220px;
+}
+
+.CalcHistory-th{
+  width: 290px;
+}
+
+.CalcHistory-thT{
+  width: 120px;
+}

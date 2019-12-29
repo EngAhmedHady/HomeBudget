@@ -1,17 +1,54 @@
+<body>
+  <div class="HomePage">
+    <form>
+      <%=link_to image_tag("Logo.png",:class => "LogoStyle"), "/expenses"%>
+      <div class = "UserLinks">
+        <ul>
+          <li style="display:inline-block;">
+            <%= link_to "Calculator", "/calculators/new", :class => "linkStyle2"%>
+          </li>
+          <li style="display:inline-block;">
+            <%= link_to "Settings", edit_user_registration_path, :class => "linkStyle2"%>
+          </li>
+          <li style="display:inline-block;">
+            <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "linkStyle2"%>
+          </li>
+        </ul>
+      </div>
+    </form>
 
-<%= simple_form_for(@expense) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :date %>
-    <%= f.input :paid %>
-    <%= f.input :type %>
-    <%= f.input :details %>
+    <%= simple_form_for(@expense) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs-exp">
+        <%= f.input :date,
+         :order => [ :day, :month, :year], 
+          input_html: { class: "input-Date"}%>
+
+        <%= f.input :paid, 
+
+          input_html: { class: "input-text"} %>
+
+        <%= f.input :expense_type,
+                     :as => :select, 
+                     :collection => [['Fixed',0],['custom',1]],
+                     :include_blank => false, 
+                     :label => "Type",
+           input_html: { class: "input-text"}%>
+
+        <%= f.input :details,
+          input_html: { class: "input-Details"} %>
+
+        <div class="DirectoryButtons-new" >
+          <%= f.button :submit, "Save Record" , :class => "Button_Style" %>
+
+          <%= link_to '<button type="button" class="Button_Style">Share Record</button>'.html_safe, "/calculators" %>
+        <% end %>
+            <%= link_to '<button type="button" class="Button_Style">cancel</button>'.html_safe, "/expenses" %>
+
+        </div>
+      </div>
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+</body>

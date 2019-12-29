@@ -5,7 +5,11 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @Date = Date.today.day.to_s + " "+Date::MONTHNAMES[Date.today.month].to_s+", "+Date.today.year.to_s
-    @expenses = Expense.all
+    @expenses = Expense.where(user_id: current_user)
+    @TotalEx = @expenses.where("cast(strftime('%m', date) as int) = ?",Date.today.month)
+
+
+    # @expenses = Expense.all
   end
 
   # GET /expenses/1
@@ -15,7 +19,8 @@ class ExpensesController < ApplicationController
 
   # GET /expenses/new
   def new
-    @expense = current_user.expense.build
+    @Date = Date.today
+    @expense = current_user.expenses.build
   end
 
   # GET /expenses/1/edit
@@ -25,14 +30,14 @@ class ExpensesController < ApplicationController
   # POST /expenses
   # POST /expenses.json
   def create
-    @expense = Expense.new(expense_params)
+    @expense = current_user.expenses.build(expense_params)
 
     respond_to do |format|
       if @expense.save
         @Confirmation = "New Expenses Saved 👌"
-        render index
-        # format.html { redirect_to @expense, notice: 'New Expenses Saved 👌' }
-        # format.json { render :show, status: :created, location: @expense }
+        
+        format.html { redirect_to expenses_url, notice: 'New Expenses Saved 👌' }
+        format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
@@ -72,6 +77,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:user_id, :date, :paid, :type, :details)
+      params.require(:expense).permit(:date, :paid, :type, :details)
     end
 end
