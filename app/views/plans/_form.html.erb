@@ -1,19 +1,63 @@
+<body>
+  <div class="HomePage">
+    <form>
+      <%=link_to image_tag("Logo.png",:class => "LogoStyle"), "/expenses"%>
+      <div class = "UserLinks">
+        <ul>
+          <li style="display:inline-block;">
+            <%= link_to "Calculator", "/calculators/new", :class => "linkStyle2"%>
+          </li>
+          <li style="display:inline-block;">
+            <%= link_to "Settings", edit_user_registration_path, :class => "linkStyle2"%>
+          </li>
+          <li style="display:inline-block;">
+            <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "linkStyle2"%>
+          </li>
+        </ul>
+      </div>
+    </form>
+    <%= simple_form_for(@plan) do |f| %>
 
-<%= simple_form_for(@plan) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="alert-1">
+       <%= f.error_notification %>
+       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :income %>
-    <%= f.input :fixed_ex %>
-    <%= f.input :target_sa %>
-    <%= f.input :old_savings %>
+    <div class="form-inputs-pl">
+      <%= f.input :start_date,
+                  :order => [ :day, :month, :year],
+                  :label => "from",
+        input_html: { class: "input-Date2"} %>
+
+      <%= f.input :end_date,
+                  :order => [ :day, :month, :year],
+                  :label => "to ....",
+        input_html: { class: "input-Date2"} %>
+
+      <%= f.input :income,
+                  :label => "Current Income",
+        input_html: { class: "input-text-pl"} %>
+
+      <%= f.input :fixed_ex,
+                  :label => "Fixed Expenses",
+        input_html: { class: "input-text-pl"} %>
+
+      <%= f.input :target_sa,
+                  :label => "Target Savings",
+        input_html: { class: "input-text-pl"}%>
+
+      <%= f.input :old_savings,
+                  :label => "Old Savings",
+        input_html: { class: "input-text-pl"}%>
+    </div>
+    <div class="DirectoryButtons-pl" >
+          <%= f.button :submit, "Save New Plan" , :class => "Button_Style" %>
+
+          <%= link_to '<button type="button" class="Button_Style">Update Last Plan</button>'.html_safe, "/calculators" %>
+        <% end %>
+            <%= link_to '<button type="button" class="Button_Style">Cancel</button>'.html_safe, "/expenses" %>
+
+        </div>
   </div>
+</body>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>

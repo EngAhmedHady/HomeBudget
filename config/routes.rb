@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  # get 'calculator/index'
+  get 'expenses/statistics'
 
   devise_for :users
   resources :expenses

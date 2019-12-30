@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191229205401) do
+ActiveRecord::Schema.define(version: 20191230010954) do
 
   create_table "calculators", force: :cascade do |t|
     t.integer "user_id"
@@ -24,8 +24,20 @@ ActiveRecord::Schema.define(version: 20191229205401) do
     t.integer "user_id"
     t.date "date"
     t.float "paid"
-    t.boolean "expense_type"
     t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "kind"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.integer "user_id"
+    t.date "start_date"
+    t.date "end_date"
+    t.float "income"
+    t.float "fixed_ex"
+    t.float "target_sa"
+    t.float "old_savings"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

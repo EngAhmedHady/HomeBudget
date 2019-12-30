@@ -4,7 +4,12 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.json
   def index
-    @plans = Plan.all
+    @plans = Plan.where(user: current_user).last
+    if @plans == nil
+      redirect_to new_plan_url
+    end
+    @expenses = Expense.where(user_id: current_user)
+    @TotalEx = @expenses.where("cast(strftime('%m', date) as int) = ?",Date.today.month).sum(:paid)
   end
 
   # GET /plans/1
@@ -14,7 +19,7 @@ class PlansController < ApplicationController
 
   # GET /plans/new
   def new
-    @plan = Plan.new
+    @plan = current_user.plans.build
   end
 
   # GET /plans/1/edit
@@ -24,7 +29,7 @@ class PlansController < ApplicationController
   # POST /plans
   # POST /plans.json
   def create
-    @plan = Plan.new(plan_params)
+    @plan = current_user.plans.build(plan_params)
 
     respond_to do |format|
       if @plan.save
@@ -69,6 +74,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:user_id, :start_date, :end_date, :income, :fixed_ex, :target_sa, :old_savings)
+      params.require(:plan).permit(:start_date, :end_date, :income, :fixed_ex, :target_sa, :old_savings)
     end
 end

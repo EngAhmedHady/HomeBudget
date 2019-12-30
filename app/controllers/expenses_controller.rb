@@ -27,6 +27,10 @@ class ExpensesController < ApplicationController
   def edit
   end
 
+  def statistics
+     @expenses = Expense.where(user_id: current_user)
+  end
+
   # POST /expenses
   # POST /expenses.json
   def create
@@ -77,6 +81,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:date, :paid, :type, :details)
+      params.require(:expense).permit(:date, :paid, :kind, :details)
     end
 end

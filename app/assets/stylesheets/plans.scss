@@ -1,3 +1,72 @@
 // Place all the styles related to the Plans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.HomePage { 
+  margin: 0;
+  position: absolute;
+  background: image-url("Background2.jpg");
+  width: 1024px;
+  height: 520px;
+  top: 50%;  left: 50%; 
+  ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 50px;
+  -webkit-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  -moz-box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  box-shadow: 11px 10px 54px -25px rgba(0,0,0,0.85);
+  overflow:auto;
+}
+
+.Finantial-Statment{
+	position: absolute;
+	font-size: 20px;
+	width: 750px; height: 250px;
+	background-color: #000;
+	color: #fff;
+	font-family: cursive;
+	text-align: left;
+	top: 150px; left: 50px;
+  filter: blur(6px);
+}
+
+.input-Date2{
+  width: 105.99px;
+  height: 25px;
+  margin: 0px 0px 10px 10px;
+  border: none;
+}
+
+.input-text-pl{
+	width: 100%;
+	height: 30px;
+	margin: 0px 5px 5px 5px;
+	border: none;
+}
+
+.form-inputs-pl{
+  position: absolute;
+  width: 400px;
+  top: 20px;
+  left: -575px;
+  color: #fff;
+  font-family: Cursive;
+  font-size: 18px;
+}
+.DirectoryButtons-pl{
+  width: 300px; height: 20px;
+  position: absolute;
+  top: 0px; left: 0px;
+}
+
+.alert-1{
+	color: #ff3300;
+	position: absolute;
+	left: 0px; top: 300px;
+	font-family: Cursive;
+	font-size: 20px;
+	text-shadow: 0px 0px 5px red;
+	width: 300px;
+}

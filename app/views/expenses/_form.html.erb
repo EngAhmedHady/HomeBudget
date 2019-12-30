@@ -27,15 +27,14 @@
           input_html: { class: "input-Date"}%>
 
         <%= f.input :paid, 
-
           input_html: { class: "input-text"} %>
 
-        <%= f.input :expense_type,
-                     :as => :select, 
-                     :collection => [['Fixed',0],['custom',1]],
-                     :include_blank => false, 
-                     :label => "Type",
-           input_html: { class: "input-text"}%>
+        <%= f.input :kind,
+                    :as => :select, 
+                    :collection => [['Fixed',0],['custom',1]],
+                    :include_blank => false, 
+                    :label => "Type",
+          input_html: { class: "input-text"} %>
 
         <%= f.input :details,
           input_html: { class: "input-Details"} %>
