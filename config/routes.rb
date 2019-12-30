@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'expenses/statistics'
   get 'expenses/list'
+  get 'welcome_page/about'
 
   devise_for :users
   resources :expenses
