@@ -32,9 +32,9 @@
         </div>
 
         <div class="statement">
-           <h2 class="LabelSt"><%= @TotalEx.sum(:paid) %> $</h2>
-           <h2 class="LabelSt"><%= @BudStatus %> $</h2>
-           <h2 class="LabelSt"><%= @AvgExp %> $</h2>
+           <h2 class="LabelSt"><%= @TotalEx.sum(:paid).round(2) %> $</h2>
+           <h2 class="LabelSt"><%= @BudStatus.round(2) %> $</h2>
+           <h2 class="LabelSt"><%= @AvgExp.round(2) %> $</h2>
         </div>
        
         <div class="Labels">

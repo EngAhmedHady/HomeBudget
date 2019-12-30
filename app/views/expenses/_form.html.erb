@@ -31,7 +31,7 @@
 
         <%= f.input :kind,
                     :as => :select, 
-                    :collection => [['Fixed',0],['custom',1]],
+                    :collection => [['Fixed',0],['custom',1],['loans',2]],
                     :include_blank => false, 
                     :label => "Type",
           input_html: { class: "input-text"} %>
@@ -41,8 +41,6 @@
 
         <div class="DirectoryButtons-new" >
           <%= f.button :submit, "Save Record" , :class => "Button_Style" %>
-
-          <%= link_to '<button type="button" class="Button_Style">Share Record</button>'.html_safe, "/calculators" %>
         <% end %>
             <%= link_to '<button type="button" class="Button_Style">cancel</button>'.html_safe, "/expenses" %>
 

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   get 'expenses/statistics'
+  get 'expenses/list'
 
   devise_for :users
   resources :expenses

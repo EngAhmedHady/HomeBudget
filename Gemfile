@@ -23,6 +23,14 @@ gem 'datetime_picker_input'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'coffee-script-source', '1.8.0'
+
+gem 'webpacker', '~> 4.x'
+
+gem 'groupdate'
+
+gem "chartkick"
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -13,7 +13,7 @@ class ExpensesController < ApplicationController
     @BudStatus = @planed.target_sa - @TotalEx.sum(:paid)
     if Date.today.day != 31 && @BudStatus > 0
       @AvgExp = @BudStatus / (31 - Date.today.day)
-    elsif BudStatus > 0
+    elsif @BudStatus < 0
       @AvgExp = 0  
     else
       @AvgExp = @BudStatus
@@ -38,7 +38,17 @@ class ExpensesController < ApplicationController
 
   def statistics
      @expenses = Expense.where(user_id: current_user)
+     @plans = Plan.where(user: current_user).last
+     @TotalEx = @expenses.where("cast(strftime('%m', date) as int) = ?",Date.today.month).
+                         where("cast(strftime('%Y', date) as int) = ?",Date.today.year)
+
+     @Rem = @plans.income - @TotalEx.sum(:paid)
   end
+
+  def list
+     @data = Expense.where(user_id: current_user)
+  end
+
 
   # POST /expenses
   # POST /expenses.json
@@ -63,7 +73,7 @@ class ExpensesController < ApplicationController
   def update
     respond_to do |format|
       if @expense.update(expense_params)
-        format.html { redirect_to @expense, notice: 'Expense was successfully updated.' }
+        format.html { redirect_to expenses_url, notice: 'Expense was successfully updated.' }
         format.json { render :show, status: :ok, location: @expense }
       else
         format.html { render :edit }

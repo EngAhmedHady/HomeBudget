@@ -137,3 +137,116 @@ h1{
   position: absolute;
   top: 0px; left: 550px;
 }
+
+.DirectoryButtons-stat{
+  width: 300px; height: 20px;
+  position: absolute;
+  top: 0px; left: 620px;
+}
+
+
+.Stat-Container{
+  position: absolute;
+  top: 150px; left: 50px;
+  width: 600px;height: 250px;
+}
+
+.StatBody{
+  overflow: auto;
+   height: 250px;
+   width: 600px;
+}
+
+.StatHeader, .StatBody{
+   display: block;
+}
+
+.TabeleHeader{
+  width: 600px;
+}
+
+.Stat-thD, .Stat-thPaid,.Stat-thl,
+.Stat-thDate,.Stat-thKind,{
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.Stat-tr:nth-child(even) {
+  background-color: #00b8e6;
+}
+
+.Stat-tr:nth-child(odd) {
+  color: #fff;
+  background-color: #003d4d;
+}
+
+.Stat-th, .Stat-tdPaid, .Stat-thKind,
+.Stat-tdl, .Stat-tdDate, .Stat-tdKind,
+.Stat-thPaid,.Stat-thDate, .Stat-tdD{
+  border: none;
+  text-align: center;
+  padding: 6px;
+}
+
+.Stat-tdl{
+  width: 20px;
+}
+
+.Stat-td{
+  width: 290px;
+}
+
+.Stat-tdDate{
+  width: 100px;
+}
+
+.Stat-thDate{
+  width: 100px;
+}
+
+.Stat-thKind{
+  width: 53px;
+}
+
+
+.Stat-thPaid{
+  width: 65px;
+}
+
+.Stat-tdPaid{
+  width: 65px;
+}
+
+.Stat-thD{
+  width: 170px;
+}
+
+.Stat-tdD{
+  width: 170px;
+}
+
+.Stat-tr:hover {
+  color: #000;
+  background-color: #ff8000;
+}
+
+
+
+.Stat-thl{
+  width: 220px;
+}
+
+.Stat-th{
+  width: 290px;
+}
+
+
+.TotalEx{
+  position: relative;
+  font-size: 16px;
+  font-family: cursive;
+  top: 0px;
+  margin: 10px 0px;
+  color: yellow;
+}

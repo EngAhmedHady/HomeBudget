@@ -32,7 +32,7 @@
 
 
 	  <tbody class="StatBody">
-	    <% @TotalEx.each do |expenses| %>
+	    <% @data.each do |expenses| %>
 	      <tr class="Stat-tr">
 	        <td class="Stat-tdDate"><%= expenses.date %></td>
 	        <td class="Stat-tdPaid"><%= expenses.paid %> $</td>
@@ -52,11 +52,10 @@
 	  </tbody>
 	</table>
 
-	<h5 class="TotalEx">Total Expenses: <%= @TotalEx.sum(:paid).round(2)%> $</h5>
-	<h5 class="TotalEx">in-out balance: <%= @Rem.round(2)%> $</h5>
+	<h5 class="TotalEx">Total Expenses: <%= @data.sum(:paid).round(2)%> $</h5>
 
 	<div class="DirectoryButtons-stat" >
-      <%= link_to '<button type="button" class="Button_Style">Full List</button>'.html_safe, "/expenses/list" %>
+      <%= link_to '<button type="button" class="Button_Style">statistics</button>'.html_safe, "/expenses/statistics" %>
       <%= link_to '<button type="button" class="Button_Style">Home</button>'.html_safe, "/expenses" %>
     </div>
 	
