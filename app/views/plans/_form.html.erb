@@ -42,6 +42,10 @@
                   :label => "Fixed Expenses",
         input_html: { class: "input-text-pl"} %>
 
+      <%= f.input :loans,
+                  :label => "loans",
+        input_html: { class: "input-text-pl"} %>
+
       <%= f.input :target_sa,
                   :label => "Target Savings",
         input_html: { class: "input-text-pl"}%>
@@ -51,9 +55,10 @@
         input_html: { class: "input-text-pl"}%>
     </div>
     <div class="DirectoryButtons-pl" >
-          <%= f.button :submit, "Save New Plan" , :class => "Button_Style" %>
-
-          <%= link_to '<button type="button" class="Button_Style">Update Last Plan</button>'.html_safe, "/calculators" %>
+          <%= f.button :submit, :class => "Button_Style" %>
+          <%- if @plan.persisted? %>
+            <%= link_to '<button type="button" class="Button_Style">Creat New Plan</button>'.html_safe, new_plan_path %>
+          <% end %>    
         <% end %>
             <%= link_to '<button type="button" class="Button_Style">Cancel</button>'.html_safe, "/expenses" %>
 

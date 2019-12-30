@@ -18,8 +18,38 @@
     </form>
     <div class="Finantial-Statment">
       <h4>Current monthly income: <%= @plans.income%> $</h4>
-      <h4>Fixed monthly expenses: (Planed) <%= @plans.income%> $   (reality) <%= @TotalEx%> </h4>
+      <h4 style="color: yellow;">Fixed monthly expenses: </h4>
+      <div style="display:inline-block;">
+        <h4>Planed:</h4><h4><%= @plans.fixed_ex%> $</h4>
+      </div>
+      <div style="display:inline-block;">
+        <h4>Reality:</h4><h4><%= @TotalFixEx%> $ </h4> 
+      </div>
+      <hr/>
+      <h4>Target monthly Savings: <%= @plans.target_sa%> $</h4>
+      <hr/>
+      <h4 style="color: yellow;">Current situation:</h4>
+      <div style="display:inline-block;">
+        <h4>in-out:</h4><h4><%= @situation%> $</h4> 
+      </div>
+      <div style="display:inline-block;">
+        <h4>Remaing Leons:</h4><h4>
+              <% - if  @Rleons != nil %>
+              <%=@Rleons%> 
+              <% else %>
+              <%= 0.0 %>
+              <%end%>
+               $
+            </h4> 
+      </div>
+      <h4>Old Savings: <%= @plans.old_savings%> $</h4>
+    </div>
 
+    <div class="DirectoryButtons-pl-in" >
+      <%= link_to '<button type="button" class="Button_Style">Home</button>'.html_safe, "/expenses" %>
+      <%= link_to '<button type="button" class="Button_Style">Update Plan</button>'.html_safe, edit_plan_path(@plans) %>
+      <%= link_to '<button type="button" class="Button_Style">Print</button>'.html_safe,"",:onclick => 'window.print();return false;' %>
+      <%= link_to '<button type="button" class="Button_Style">Statistics</button>'.html_safe, "/expenses/statistics" %>
     </div>
     
   </div>

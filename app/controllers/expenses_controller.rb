@@ -5,10 +5,19 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
   def index
     @Date = Date.today.day.to_s + " "+Date::MONTHNAMES[Date.today.month].to_s+", "+Date.today.year.to_s
+    @currentMonth = Date.today.month 
+    @planed = Plan.where(user: current_user).last
     @expenses = Expense.where(user_id: current_user)
-    @TotalEx = @expenses.where("cast(strftime('%m', date) as int) = ?",Date.today.month)
-
-
+    @TotalEx = @expenses.where("cast(strftime('%m', date) as int) = ?",Date.today.month).
+                         where("cast(strftime('%Y', date) as int) = ?",Date.today.year)
+    @BudStatus = @planed.target_sa - @TotalEx.sum(:paid)
+    if Date.today.day != 31 && @BudStatus > 0
+      @AvgExp = @BudStatus / (31 - Date.today.day)
+    elsif BudStatus > 0
+      @AvgExp = 0  
+    else
+      @AvgExp = @BudStatus
+    end
     # @expenses = Expense.all
   end
 
