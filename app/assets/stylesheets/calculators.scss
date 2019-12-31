@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam&display=swap');
+
 body{
 	background-color: #004668
 }
@@ -36,7 +38,7 @@ table, th, td {
 /*General Button styles*/
 .Button_Style_Calc{
     width: 50px; height: 50px;
-    font-family: cursive;
+    font-family: 'Kalam', cursive;
     border-radius: 10px;
     font-size: 18px;
 	  opacity:0.6;
@@ -57,7 +59,7 @@ table, th, td {
 /*Equal Button style*/
 .Button_Style_Calc2{
     width: 50px; height: 105px;
-    font-family: cursive;
+    font-family: 'Kalam', cursive;
     border-radius: 10px;
     font-size: 18px;
     margin: 1px;
@@ -80,7 +82,7 @@ table, th, td {
   left: 7px;
   width: 300px;
   height: 40px;
-  font-family: cursive;
+  font-family: 'Kalam', cursive;
   border-radius: 10px;
   font-size: 18px;
   margin: 1px;
@@ -94,8 +96,6 @@ table, th, td {
   opacity: 1;
 }
 
-      
-   
 .textview{
     width: 224.5px;
     height: 18px;
@@ -128,7 +128,7 @@ table, th, td {
 	display: inline;
   width: 265px;
   position: absolute;
-  top: -85px; left: 45px;
+  top: -85px; left: 60%;
 }
 
 .DirectoryButtons{
@@ -139,7 +139,7 @@ table, th, td {
 
 .CalcHistory{
   width: 100%;
-  font-family: cursive;
+  font-family: 'Kalam', cursive;
   border: none;
   text-decoration: none;
   border-collapse:collapse;

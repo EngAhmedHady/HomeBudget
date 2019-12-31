@@ -27,7 +27,7 @@
 }
 
 .linkStyle2{
-	font-family: Cursive;
+	font-family: 'Kalam', cursive;
 	width: 100px;
 	color: #fff;
 	text-decoration: none;
@@ -42,7 +42,7 @@
 	display: inline;
 	width: 330px;
 	position: absolute;
-  top: -101px; left: 5px; 
+  top: -101px; left: 21px; 
 }
 
 h1{
@@ -51,7 +51,7 @@ h1{
   left: -620px; 
   color: #fff;
   font-size: 50px;
-  font-family: Cursive;
+  font-family: 'Kalam', cursive;
 }
 
 .ButtonStyle3{
@@ -62,15 +62,16 @@ h1{
 
 .Label{
   color: #fff;
-  font-family: Cursive;
+  font-family: 'Kalam', cursive;
   font-size: 18px;
-  margin: 10px 70px;
+  margin: 10px 75px;
   display: inline-block;
+  text-align: center;
 }
 
 .Labels{
   position: absolute;
-  width: 850px;
+  width: 900px;
   top: 220px; left: -560px;
 }
 .statement{
@@ -96,7 +97,7 @@ h1{
 .LabelSt{
   position: relative;
   color: #ffff00;
-  font-family: Cursive;
+  font-family: 'Kalam', cursive;
   font-size: 30px;
   margin: 10px 35px;
   border-radius: 20px;
@@ -113,7 +114,7 @@ h1{
   top: 30px;
   left: -575px;
   color: #fff;
-  font-family: Cursive;
+  font-family: 'Kalam', cursive;
   font-size: 18px;
 }
 
@@ -245,7 +246,7 @@ h1{
 .TotalEx{
   position: relative;
   font-size: 16px;
-  font-family: cursive;
+  font-family: 'Kalam', cursive;
   top: 0px;
   margin: 10px 0px;
   color: yellow;

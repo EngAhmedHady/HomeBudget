@@ -24,7 +24,7 @@ gem 'datetime_picker_input'
 gem 'coffee-rails', '~> 4.2'
 gem 'coffee-script-source', '1.8.0'
 
-gem 'webpacker', '~> 4.x'
+gem 'jammit-s3', '~> 0.6.0.2'
 
 gem 'groupdate'
 
